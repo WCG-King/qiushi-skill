@@ -92,9 +92,26 @@ graph TD
 - **macOS / Linux**：需要可用的 `bash` 或 `sh`
 - **验证脚本**：仓库内置 `tests/validate.sh`（macOS/Linux）和 `tests/validate.ps1`（Windows），可用于安装后自检
 
-### 方式一：手动安装
+### 方式一：环境与插件安装
 
 #### Claude Code
+
+**方法 A：通过 Claude Plugin Hub 安装（推荐）**
+
+在终端中一键安装：
+
+```bash
+npx claudepluginhub hughyau/qiushi-skill
+```
+
+或者在 Claude Code 中通过 Marketplace 手动安装：
+
+1. 添加 Marketplace（只需执行一次）：
+   `/plugin marketplace add https://www.claudepluginhub.com/api/plugins/hughyau-qiushi-skill/marketplace.json`
+2. 安装插件：
+   `/plugin install hughyau-qiushi-skill@cpd-hughyau-qiushi-skill`
+
+**方法 B：源码克隆安装**
 
 ```bash
 git clone https://github.com/HughYau/qiushi-skill
