@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="400"/>
+  <img src="assets/logo_main.png" width="400"/>
 </p>
 
 # 🔴 求是 Skill —— 武装 AI 的大脑
