@@ -313,6 +313,16 @@ qiushi-skill/
 - OpenCode：原生安装入口文档见 [docs/README.opencode.md](docs/README.opencode.md)
 - 通用：直接复用 `skills/` 与 `commands/`
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=HughYau%2Fqiushi-skill&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=HughYau/qiushi-skill&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=HughYau/qiushi-skill&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=HughYau/qiushi-skill&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## ⚖️ 许可证
 
 MIT License
