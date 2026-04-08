@@ -190,6 +190,24 @@
     flex-wrap: wrap;
   }
 
+  .star-badge-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: 1.5px solid var(--color-primary);
+    background: rgba(245, 239, 230, 0.9);
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .star-badge-link:hover,
+  .star-badge-link:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 rgba(139, 26, 26, 0.14);
+    background: rgba(139, 26, 26, 0.08);
+  }
+
   .version-pill {
     padding: 7px 12px;
     border: 1.5px solid var(--color-primary);
@@ -327,7 +345,6 @@
 
   .principle-card p,
   .layer-card p,
-  .star-panel p,
   .platform-card p,
   .clarify-card p,
   .weapon-card p {
@@ -682,13 +699,12 @@
           「求是 Skill」从教员思想中提炼一条总原则与九大方法论工具，把抽象理念变成可执行的工作方式。
         </p>
         <div class="hero-meta">
-          <img
-            src="https://img.shields.io/github/stars/HughYau/qiushi-skill?style=flat-square&color=8b1a1a&labelColor=f5efe6"
-            alt="求是 Skill GitHub Star 徽标"
-          >
-        </div>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/HughYau/qiushi-skill" target="_blank" rel="noreferrer">★ GitHub 仓库</a>
+          <a class="star-badge-link" href="https://github.com/HughYau/qiushi-skill" target="_blank" rel="noreferrer" aria-label="在 GitHub 上给求是 Skill 点 Star">
+            <img
+              src="https://img.shields.io/github/stars/HughYau/qiushi-skill?style=flat-square&color=8b1a1a&labelColor=f5efe6"
+              alt="求是 Skill GitHub Star 徽标（可点击）"
+            >
+          </a>
         </div>
       </div>
     </header>
@@ -887,29 +903,13 @@
     <section class="frame section reveal" id="starhistory">
       <span class="section-label">Star History</span>
     
-      <!-- <div class="star-grid">
-        <article class="star-panel">
-          <h3>实时 Star 数</h3>
-          <p>访问者不必点进仓库，也能第一时间看到项目正在被多少人持续关注。</p>
-          <div class="badge-block">
-            <img
-              src="https://img.shields.io/github/stars/HughYau/qiushi-skill?style=flat-square&color=8b1a1a&labelColor=f5efe6"
-              alt="求是 Skill 实时 Star 徽标"
-            >
-          </div>
-          <p>如果你认同这种“先调查、再判断、再推进”的 AI Agent 方法论，就让更多人先看到它。</p>
-        </article>
-        <article class="star-panel chart-shell">
-          <h3>Star History 图表</h3> -->
-    
           <a class="star-link" href="https://www.star-history.com/?repos=HughYau%2Fqiushi-skill&type=date&legend=top-left" target="_blank" rel="noreferrer">
             <img
               src="https://api.star-history.com/chart?repos=HughYau/qiushi-skill&type=date&legend=top-left"
               alt="求是 Skill Star History 图表"
             >
           </a>
-        <!-- </article>
-      </div> -->
+
     </section>
 
     <section class="frame section reveal" id="platforms">
@@ -969,10 +969,9 @@
     </div>
 
     <footer class="frame cta reveal">
-      <p>如果你觉得有帮助，就给仓库点一个 Star，让这套体系被更多真正需要它的人看到。</p>
+      <p>如果你觉得有帮助，就给仓库点一个 Star。</p>
       <div class="cta-actions">
         <a class="button button-primary" href="https://github.com/HughYau/qiushi-skill" target="_blank" rel="noreferrer">★ 给仓库加星</a>
-        <a class="button button-secondary" href="https://github.com/HughYau/qiushi-skill" target="_blank" rel="noreferrer">GitHub →</a>
       </div>
       <p class="footer-note">MIT License · GitHub Pages /docs 部署</p>
     </footer>
