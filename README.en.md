@@ -49,15 +49,16 @@ Non-interactive examples:
 ```bash
 npx qiushi-skill install --target claude-code --scope user
 npx qiushi-skill install --target claude-code,cursor --scope project
+npx qiushi-skill install --target openclaw
 npx qiushi-skill validate
 npx qiushi-skill uninstall --target claude-code --scope user
 ```
 
 The CLI is zero-dependency and does four things:
 
-- installs standard plugin bundles for Claude Code and Cursor
-- prints standard setup guidance for OpenClaw, Hermes, Codex, and OpenCode
-- validates the repository with one Node-based code path
+- installs standard plugin bundles only for Claude Code and Cursor
+- prints setup guidance for OpenClaw, Hermes, Codex, and OpenCode instead of pretending to auto-install them
+- validates the current checkout or published bundle with one Node-based code path
 - keeps `install`, `validate`, and `uninstall` under one stable entrypoint
 
 ### Claude Code Official Marketplace
@@ -81,10 +82,10 @@ claude --plugin-dir .
 
 - Claude Code: use the GitHub marketplace flow above, or `npx qiushi-skill install --target claude-code`.
 - Cursor: use `npx qiushi-skill install --target cursor`, or copy the bundle to your configured plugins directory.
-- Codex: see [docs/README.codex.md](docs/README.codex.md) or [`.codex/INSTALL.md`](.codex/INSTALL.md).
-- OpenCode: see [docs/README.opencode.md](docs/README.opencode.md) or [`.opencode/INSTALL.md`](.opencode/INSTALL.md).
-- OpenClaw: see [docs/README.openclaw.md](docs/README.openclaw.md) or [`.openclaw/INSTALL.md`](.openclaw/INSTALL.md).
-- Hermes Agent: see [docs/README.hermes.md](docs/README.hermes.md) or [`.hermes/INSTALL.md`](.hermes/INSTALL.md).
+- Codex: see [`.codex/INSTALL.md`](.codex/INSTALL.md).
+- OpenCode: see [`.opencode/INSTALL.md`](.opencode/INSTALL.md).
+- OpenClaw: see [`.openclaw/INSTALL.md`](.openclaw/INSTALL.md).
+- Hermes Agent: see [`.hermes/INSTALL.md`](.hermes/INSTALL.md).
 
 ## Validate
 
@@ -94,7 +95,7 @@ Preferred:
 npx qiushi-skill validate
 ```
 
-Legacy fallback:
+If you are working from a source checkout, legacy fallback scripts are also available:
 
 ```bash
 bash tests/validate.sh
@@ -106,7 +107,7 @@ Validation checks:
 
 - JSON validity, including `.claude-plugin/marketplace.json`
 - version consistency between `package.json` and marketplace metadata
-- presence of CLI files, hooks, commands, and platform docs
+- presence of CLI files, hooks, commands, packaged platform guides, and the isolated marketplace bundle
 - frontmatter completeness for skills, commands, and agents
 - local Markdown link integrity
 

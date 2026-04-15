@@ -7,7 +7,7 @@
 
 | 平台 | 自动注入 | 手动命令 | 安装入口 | 推荐验证 |
 |------|---------|---------|---------|---------|
-| Claude Code | 支持 SessionStart hook | 支持 | `.claude-plugin/` + `.claude-plugin/marketplace.json` | `npx qiushi-skill validate` |
+| Claude Code | 支持 SessionStart hook | 支持 | `.claude-plugin/` + `.claude-plugin/marketplace.json` + `marketplace/claude` | `npx qiushi-skill validate` |
 | Cursor | 支持插件元数据与 hook 文件 | 支持 | `.cursor-plugin/` 或 `npx qiushi-skill install --target cursor` | `npx qiushi-skill validate` |
 | OpenClaw | 通过 Claude bundle 兼容层支持 | 支持 | `.openclaw/INSTALL.md` | `openclaw plugins list` + `npx qiushi-skill validate` |
 | Hermes Agent | 通过原生 skills 目录支持 | 由 Hermes skills 暴露 | `.hermes/INSTALL.md` | `hermes skills list` + `npx qiushi-skill validate` |

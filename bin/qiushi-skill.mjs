@@ -33,11 +33,11 @@ Usage:
 Platforms:
   claude-code   Copy plugin bundle into ~/.claude/plugins/qiushi-skill
   cursor        Copy plugin bundle into ~/.cursor/plugins/qiushi-skill
-  openclaw      Print official GitHub marketplace install guidance
-  hermes        Print native Hermes skills install guidance
-  codex         Print manual install guidance
-  opencode      Print manual install guidance
-  all           Install copy targets and print guidance for the rest
+  openclaw      Print official GitHub marketplace setup guidance
+  hermes        Print native Hermes skills setup guidance
+  codex         Print manual setup guidance
+  opencode      Print manual setup guidance
+  all           Copy managed bundles and print setup guidance for the rest
 
 Examples:
   npx qiushi-skill
@@ -120,7 +120,7 @@ async function promptInstallChoices(platforms) {
   });
 
   try {
-    console.log("检测到或可用的平台：");
+    console.log("检测到或可接入的平台：");
     const allChoices = [...platforms, { id: "all", name: "全部平台", mode: "mixed", summary: "复制可管理目标，并打印其余平台指引" }];
     const defaultIndex = defaultTargetIndex(platforms) + 1;
 
@@ -133,11 +133,15 @@ async function promptInstallChoices(platforms) {
       console.log(`  ${index + 1}. ${platform.name} - ${suffix}`);
     });
 
-    const targetAnswer = (await rl.question(`选择目标 [${defaultIndex}]: `)).trim();
-    const selectedIndex = Number(targetAnswer || defaultIndex) - 1;
-    const selected = allChoices[selectedIndex];
-    if (!selected) {
-      throw new Error("Invalid selection.");
+    let selected = null;
+    while (!selected) {
+      const targetAnswer = (await rl.question(`选择目标 [${defaultIndex}]: `)).trim();
+      const selectedIndex = Number(targetAnswer || defaultIndex) - 1;
+      selected = allChoices[selectedIndex] ?? null;
+
+      if (!selected) {
+        console.log("请输入列表中的有效序号。");
+      }
     }
 
     let scope = "user";
@@ -184,7 +188,7 @@ function printInstallResults(results) {
     }
   }
 
-  console.log("✓ 运行 `npx qiushi-skill validate` 自检当前仓库与 bundle。");
+  console.log("✓ 运行 `npx qiushi-skill validate` 自检当前 checkout 或已发布 bundle。");
 }
 
 async function runInstall(parsed) {

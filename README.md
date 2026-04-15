@@ -130,15 +130,16 @@ npx qiushi-skill
 ```bash
 npx qiushi-skill install --target claude-code --scope user
 npx qiushi-skill install --target claude-code,cursor --scope project
+npx qiushi-skill install --target openclaw
 npx qiushi-skill uninstall --target claude-code --scope user
 npx qiushi-skill validate
 ```
 
 CLI 会：
 
-- 为 Claude Code / Cursor 复制标准 bundle 到约定插件目录
-- 为 OpenClaw / Hermes / Codex / OpenCode 打印对应平台的标准接入指引
-- 统一调用 Node 版验证逻辑，避免 Bash / PowerShell 双脚本长期漂移
+- 只为 Claude Code / Cursor 复制标准 bundle 到约定插件目录
+- 为 OpenClaw / Hermes / Codex / OpenCode 输出标准接入指引
+- 用同一条 Node 入口校验当前源码 checkout 或已发布 bundle
 
 ### 方式二：Claude Code 官方 Marketplace 安装
 
@@ -230,7 +231,6 @@ npx claudepluginhub hughyau/qiushi-skill
 npx qiushi-skill validate
 ```
 
-脚本：
 
 ```bash
 bash tests/validate.sh
@@ -243,7 +243,7 @@ powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File tests/validate.ps1
 ```
 
 
-更多平台细节见 [docs/platforms.md](docs/platforms.md)。
+更多平台细节见根目录下的 `.codex/INSTALL.md`、`.opencode/INSTALL.md`、`.openclaw/INSTALL.md`、`.hermes/INSTALL.md`；源码仓库还包含 `docs/platforms.md`。
 
 ## 📚 支撑文件
 
