@@ -113,6 +113,7 @@ graph TD
 
 - 📖 **[分析外行指导内行问题](https://mp.weixin.qq.com/s/bg5cgSAscy37T4gv9YJG0A)**：展示了如何用求是 Skill 拆解复杂的职场现象。
 - 🤖 **[ZZZ 白话讲 AI —— 用“求是方法论”写一本零基础 AI 认知书](https://github.com/mfkyddh/ZZZ-Simple-AI)**：以“求是”方法论组织 AI 入门知识。
+- 🛠️ **[Harness Ralph Qiushi](https://github.com/Tiyou-zm/harness-ralph-qiushi)**：结合求是调查研究与矛盾分析法，构建可靠的长线 Agent 交付循环工作流。
 
 ## 📦 安装
 
